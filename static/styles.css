@@ -1,0 +1,183 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #233142, #485563); /* Dark gradient background */
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #f8b195;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border added */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 50px; /* Circular border */
+    font-size: 1rem;
+    color: #eee;
+    background-color: rgba(0, 0, 0, 0.2); /* Transparent dark background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border added */
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+button[type="submit"] {
+    background-color: #f8b195; /* Light peach background */
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px; /* Circular border */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #333; /* Change to dark background on hover */
+    color: #fff; /* Change to white text on hover */
+}
+
+/* Task List Container */
+.task-list-container {
+    background-color: #3b3f44; /* Matching background */
+    padding: 20px;
+    border-radius: 50px; /* Circular outer border to match the form */
+    border: 2px solid #333; /* Same dark grey border as the form */
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    overflow-y: auto; /* Enable scrolling for content overflow */
+    max-height: 500px; /* Adjust height to fit your needs */
+}
+
+/* Task List Header */
+.task-list-container h2 {
+    color: #FF7F50; /* Coral color for heading */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Task List Items */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task List Items */
+.task-list li {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    color: #ffffff; /* White text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #333; /* Same dark grey separator line as the form */
+    margin-top: 10px; /* Space between tasks for better visual separation */
+}
+
+/* Task Title and Edit Input */
+.task-title {
+    flex-grow: 1; /* Allow content to grow and take up available space */
+    margin-right: 10px;
+}
+
+.edit-task-input {
+    flex-grow: 1; /* Make the input take available space */
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ddd;
+    font-size: 1rem;
+}
+
+/* Task Actions (Edit and Delete Buttons) */
+.task-actions {
+    display: flex;
+    gap: 10px; /* Space between edit and delete buttons */
+}
+
+.edit-button,
+.delete-form button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem; /* Increase icon size */
+    color: #f8b195; /* Icon color matching */
+}
+
+.edit-button:hover,
+.delete-form button:hover {
+    color: #FF6347; /* Different color on hover */
+}
+
+/* Checkbox Styling */
+.task-checkbox {
+    appearance: none; /* Remove default checkbox */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f8b195; /* Custom border color */
+    border-radius: 50%; /* Make it circular */
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.task-checkbox:checked {
+    background-color: #f8b195; /* Fill color when checked */
+    border-color: #f8b195; /* Border color matches fill */
+}
+
+.task-checkbox:checked::before {
+    content: '✔'; /* Checkmark */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    color: #333; /* Checkmark color */
+}
+
+/* Completed Task Styling */
+.completed {
+    text-decoration: line-through;
+    color: #888; /* Lighter color for completed tasks */
+}
