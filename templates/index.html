@@ -7,11 +7,38 @@
     <title>Mbongeni Croods</title>
 </head>
 <body>
-    <h1>Mbongeni Croods Manager</h1>
+    <h1>Mbongeni Taskify</h1>
     <form action="/" method="POST">
         <input type="text" id="content" name="content" placeholder="Enter new task" required>
         <button type="submit">Add Task</button>
     </form>
+
+    <!-- Task List Container -->
+    <div class="task-list-container">
+        <h2>Task List</h2>
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li data-task-id="{{ task.id }}">
+                    <!-- Styled Checkbox -->
+                    <input type="checkbox" class="task-checkbox" {% if task.complete %}checked{% endif %}>
+
+                    <!-- Task Title -->
+                    <span class="task-title">{{ task.title }}</span>
+
+                    <!-- Edit Task Input (Hidden by Default) -->
+                    <input type="text" class="edit-task-input" value="{{ task.title }}" style="display: none;">
+
+                    <!-- Edit and Delete Buttons -->
+                    <div class="task-actions">
+                        <button type="button" class="edit-button">✏️</button>
+                        <form action="/delete/{{ task.id }}" method="POST" class="delete-form">
+                            <button type="submit" class="delete-button">🗑️</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>  
+    <script src="{{ url_for('static', filename='script.js') }}"></script>  
 </body>
 </html>
-
