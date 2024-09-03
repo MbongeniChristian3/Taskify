@@ -3,10 +3,10 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ue8omuqg30a8su:p7358bafbae3ac44ba0a38e54fb318ed2978b09d990bc472d4910a82f8212684b@c9mq4861d16jlm.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d9i6kftff8b69o'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ubt6qkl3u8huhp:pe5a1737aac7b96de6d02c3651c5ac36d7a53a6b14524d23efcfccc02fa37aaa4@c97r84s7psuajm.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/de07heu1vc4ufh'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-#postgresql://taskify_itvz_user:OE3JJaiIS7MrFTibWD5eTo2twtqq7czj@dpg-cra5rvaj1k6c73bs5qag-a.oregon-postgres.render.com/taskify_itvz
+
 # Define the Task model
 class MyTask(db.Model):
     id = db.Column(db.Integer, primary_key=True)
