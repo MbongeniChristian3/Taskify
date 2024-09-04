@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ubt6qkl3u8huhp:pe5a1737aac7b96de6d02c3651c5ac36d7a53a6b14524d23efcfccc02fa37aaa4@c97r84s7psuajm.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/de07heu1vc4ufh'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ubt6qkl3u8huhp:pe5a1737aac7b96de6d02c3651c5ac36d7a53a6b14524d23efcfccc02fa37aaa4@c97r84s7psuajm.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/de07heu1vc4ufh'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -57,4 +57,3 @@ def delete_task(id):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
