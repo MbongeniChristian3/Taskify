@@ -1,14 +1,11 @@
 import os
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://taskify_itvz_user:OE3JJaiIS7MrFTibWD5eTo2twtqq7czj@dpg-cra5rvaj1k6c73bs5qag-a/taskify_itv')
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://taskify_itvz_user:OE3JJaiIS7MrFTibWD5eTo2twtqq7czj@dpg-cra5rvaj1k6c73bs5qag-a.oregon-postgres.render.com/taskify_itvz')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 # Define the Task model
 class MyTask(db.Model):
